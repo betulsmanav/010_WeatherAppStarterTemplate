@@ -1,0 +1,22 @@
+{% block container %}
+<h1>Weather App</h1>
+
+<form action="" method='get'>
+    <input type="text" name="name">
+    <input type="submit" value='Add'>
+</form>
+
+{% for city in city_data  %}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text">{{ city.city }}</p>
+        <h5 class="card-title">{{ city.temp }} °C <br></h5>
+        <img src="http://openweathermap.org/img/wn/{{ city.icon }}.png" alt=""> <br>
+      <p class="card-text" >{{ city.desc }}</p>
+    </div>
+  </div>
+
+
+{% endfor %}
+{% endblock container %}
